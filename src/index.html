@@ -2,15 +2,27 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Angular2 - Express</title>
+  <title>Contextual Collaboration</title>
   <base href="/">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="assets/css/normalize.css">
+	<link rel="stylesheet" href="assets/css/main.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
   <app-root>
-    Loading...
+    <div id="demo-content">
+        <div id="loader-wrapper" style="postion:relative;background:#009999; width: 100%; height: 100%; vertical-align:middle;">
+          <div style="margin-top:130px; color: white; text-align:center;font-family: cursive;"><h1>Contextual Collaboration</h1></div>
+          <div id="loader" style="position:absolute; top:60;"></div>
+        </div>
+    </div>
   </app-root>
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    var socket = io();
+  </script>
 </body>
 </html>

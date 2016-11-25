@@ -1,7 +1,7 @@
 import * as express from 'express';
 import { json, urlencoded } from 'body-parser';
 import * as path from 'path';
-import * as cors from 'cors';
+// import * as cors from 'cors';
 import * as compression from 'compression';
 
 import { loginRouter } from './routes/login';
@@ -11,16 +11,25 @@ import { feedRouter } from './routes/feed';
 
 const app: express.Application = express();
 
+ var cors = require('cors')
+
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
+
 app.disable('x-powered-by');
 
 app.use(json());
 app.use(compression());
 app.use(urlencoded({ extended: true }));
 
+app.use(cors());
+
 // allow cors only for local dev
+/** 
 app.use(cors({
   origin: 'http://localhost:4200'
 }));
+**/
 
 // app.set('env', 'production');
 
@@ -50,6 +59,28 @@ app.use(function(err: any, req: express.Request, res: express.Response, next: ex
   res.json({
     error: {},
     message: err.message
+  });
+});
+
+var allowCrossDomain = function(req, res, next) {
+    if ('OPTIONS' == req.method) {
+      res.header('Access-Control-Allow-Origin', '*');
+      res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,PATCH,OPTIONS');
+      res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
+      res.send(200);
+    }
+    else {
+      next();
+    }
+};
+
+app.use(allowCrossDomain);
+
+
+io.on('connection', function(socket){
+  console.log('a user connected');
+  socket.on('disconnect', function(){
+    console.log('user disconnected');
   });
 });
 

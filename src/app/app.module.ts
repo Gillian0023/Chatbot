@@ -7,10 +7,16 @@ import { StoreLogMonitorModule, useLogMonitor } from '@ngrx/store-log-monitor';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 
+import { MdIconModule, MdIconRegistry} from '@angular2-material/icon'; 
+import { MdInputModule } from '@angular2-material/input'; 
+import { MdButtonModule } from '@angular2-material/button';
+
+
 import { AppComponent } from './app.component';
 import { routing } from './app.routing';
 import { feedReducer } from './store/feed/feed.reducer';
 import { FeedEffects } from './store/feed/feed.effects';
+
 
 @NgModule({
   declarations: [
@@ -31,9 +37,14 @@ import { FeedEffects } from './store/feed/feed.effects';
     }),
     EffectsModule.run(FeedEffects),
     StoreLogMonitorModule,
-    HttpModule
+    HttpModule,
+    MdIconModule.forRoot(),
+    MdInputModule.forRoot(),
+    MdButtonModule.forRoot(),
   ],
-  providers: [],
+  providers: [
+    MdIconRegistry,
+  ],
   bootstrap: [
     AppComponent
   ]
