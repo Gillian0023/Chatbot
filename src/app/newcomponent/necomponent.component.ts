@@ -6,30 +6,21 @@ import { Observable } from 'rxjs';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 
-import { ChatService } from './chatservice';
-
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-  providers: [ChatService]
+  selector: 'necomponent',
+  templateUrl: './necomponent.component.html',
+  styleUrls: ['./necomponent.component.css'],
 })
-export class AppComponent  {
+export class NewComponent  {
   title = 'Contextual Collaboration';
 
   observable$: Observable<{}>;
 
-  constructor(http: Http, private chatService:ChatService) {
-    /*
-    this.observable$ = http
-      .get('/api/circuit')
-      .map((response: Response) => response.json())
-      */
-        http
+  constructor(http: Http,) {
+    http
       .get('http://localhost:4300/api/circuit/')
       .toPromise()
       .then(()=>setTimeout(() =>{}, 5000));
-
 
       setInterval(function(){
          http

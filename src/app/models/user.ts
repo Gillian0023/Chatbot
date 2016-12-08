@@ -2,7 +2,7 @@
  * Created by yue on 24.11.16.
  */
 
-import {WinCCInstance} from 'models/winccInstance';
+import {WinCCInstance} from './winccInstance';
 
 export class User {
     email: string;
