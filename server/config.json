@@ -1,0 +1,15 @@
+{
+	"users" : [
+		{
+			"email"    : "mustajab90@gmail.com",
+			"password" : "SBeXpHrejHRQK28u"			
+		},
+		{
+			"email"    : "moataz90@gmail.com",
+			"password" : "2CqpXe4z6Z9f9aJ7"			
+		}
+	],
+    "domain"             : "circuitsandbox.net",
+    "sdkLogLevel"        : "warn",
+    "filesPath"          : "./files/"
+}

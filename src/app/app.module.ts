@@ -13,6 +13,8 @@ import { MdButtonModule } from '@angular2-material/button';
 
 
 import { AppComponent } from './app.component';
+import { NewComponent } from './newcomponent/necomponent.component';
+
 import { routing } from './app.routing';
 import { feedReducer } from './store/feed/feed.reducer';
 import { FeedEffects } from './store/feed/feed.effects';
@@ -20,7 +22,8 @@ import { FeedEffects } from './store/feed/feed.effects';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NewComponent
   ],
   imports: [
     BrowserModule,

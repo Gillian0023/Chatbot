@@ -15,12 +15,12 @@ export class DashboardComponent {
 
   constructor(public fb: FormBuilder, public store: Store<{}>) {
 
-    this.feeds$ = store.select('feed');
+    //this.feeds$ = store.select('feed');
 
-    this.form = fb.group({
-      text: ['', Validators.required],
-      name: ['', Validators.required]
-    });
+    //this.form = fb.group({
+//      text: ['', Validators.required],
+  //    name: ['', Validators.required]
+    //});
   }
 
   submitFeed(): void {

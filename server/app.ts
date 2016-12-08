@@ -1,20 +1,17 @@
 import * as express from 'express';
 import { json, urlencoded } from 'body-parser';
 import * as path from 'path';
-// import * as cors from 'cors';
+import * as cors from 'cors';
 import * as compression from 'compression';
 
-import { loginRouter } from './routes/login';
-import { protectedRouter } from './routes/protected';
-import { publicRouter } from './routes/public';
-import { feedRouter } from './routes/feed';
+// import { loginRouter } from './routes/login';
+// import { protectedRouter } from './routes/protected';
+// import { publicRouter } from './routes/public';
+// import { feedRouter } from './routes/feed';
+import { circuitRouter } from './routes/circuit';
 
 const app: express.Application = express();
 
- var cors = require('cors')
-
-var http = require('http').Server(app);
-var io = require('socket.io')(http);
 
 app.disable('x-powered-by');
 
@@ -23,21 +20,19 @@ app.use(compression());
 app.use(urlencoded({ extended: true }));
 
 app.use(cors());
-
 // allow cors only for local dev
-/** 
-app.use(cors({
-  origin: 'http://localhost:4200'
-}));
-**/
+//app.use(cors({
+ // origin: 'http://localhost:4200'
+//}));
 
 // app.set('env', 'production');
 
 // api routes
-app.use('/api/secure', protectedRouter);
-app.use('/api/login', loginRouter);
-app.use('/api/public', publicRouter);
-app.use('/api/feed', feedRouter);
+// app.use('/api/secure', protectedRouter);
+// app.use('/api/login', loginRouter);
+// app.use('/api/public', publicRouter);
+// app.use('/api/feed', feedRouter);
+  app.use('/api/circuit', circuitRouter);
 
 if (app.get('env') === 'production') {
 
@@ -51,6 +46,7 @@ app.use(function(req: express.Request, res: express.Response, next) {
   next(err);
 });
 
+
 // production error handler
 // no stacktrace leaked to user
 app.use(function(err: any, req: express.Request, res: express.Response, next: express.NextFunction) {
@@ -62,26 +58,5 @@ app.use(function(err: any, req: express.Request, res: express.Response, next: ex
   });
 });
 
-var allowCrossDomain = function(req, res, next) {
-    if ('OPTIONS' == req.method) {
-      res.header('Access-Control-Allow-Origin', '*');
-      res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,PATCH,OPTIONS');
-      res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
-      res.send(200);
-    }
-    else {
-      next();
-    }
-};
-
-app.use(allowCrossDomain);
-
-
-io.on('connection', function(socket){
-  console.log('a user connected');
-  socket.on('disconnect', function(){
-    console.log('user disconnected');
-  });
-});
 
 export { app }
