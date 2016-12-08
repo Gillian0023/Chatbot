@@ -31,10 +31,10 @@
     "@angular/platform-browser": "~2.2.0",
     "@angular/platform-browser-dynamic": "~2.2.0",
     "@angular/router": "~3.2.0",
-    "@angular2-material/button": "^2.0.0-alpha.8-2",
-    "@angular2-material/core": "^2.0.0-alpha.8-2",
-    "@angular2-material/icon": "^2.0.0-alpha.8-2",
-    "@angular2-material/input": "^2.0.0-alpha.8-2",
+    "@angular2-material/button": "2.0.0-alpha.8-2",
+    "@angular2-material/core": "2.0.0-alpha.8-2",
+    "@angular2-material/icon": "2.0.0-alpha.8-2",
+    "@angular2-material/input": "2.0.0-alpha.8-2",
     "@ngrx/core": "^1.2.0",
     "@ngrx/effects": "^2.0.0",
     "@ngrx/store": "^2.2.1",
@@ -66,7 +66,9 @@
     "ts-node": "1.2.1",
     "tslint": "3.13.0",
     "typescript": "~2.0.3",
-    "zone.js": "^0.6.23"
+    "zone.js": "^0.6.23",
+    "bunyan": "^1.5.1",
+    "file-api": "^0.10.4"
   },
   "devDependencies": {
     "concurrently": "^3.1.0",

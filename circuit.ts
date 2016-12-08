@@ -421,7 +421,7 @@ function runTest() {
 //*********************************************************************
 runTest();
 
-export{circuit};
+export{ runTest };
 
 
 

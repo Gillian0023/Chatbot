@@ -21,4 +21,4 @@ protectedRouter.get('/', (request, response) => {
         title: 'Protected call'
     });
 });
-//# sourceMappingURL=/Users/mustajab/Desktop/contextualcollaboration/angular2-express-starter/dist/server/routes/protected.js.map
+//# sourceMappingURL=/Users/jilin/Programming/contextualcollabnodejs/dist/server/routes/protected.js.map

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Http, Response } from '@angular/http';
-
+import { runTest } from '../../circuit';
 import { Observable } from 'rxjs';
 
 import 'rxjs/add/operator/catch';
@@ -10,17 +10,12 @@ import { ChatService } from './chatservice';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
+  templateUrl: './login/login.component.html',
   styleUrls: ['./app.component.css'],
   providers: [ChatService]
 })
 export class AppComponent  {
   title = 'Contextual Collaboration';
-  private socket: any;
-  private socketUrl: string = 'http://localhost:4300';
-  messages = [];
-  connection;
-  message;
 
   observable$: Observable<{}>;
 
@@ -30,19 +25,15 @@ export class AppComponent  {
       .map((response: Response) => response.json());
   }
 
-
-   sendMessage(){
-    this.chatService.sendMessage(this.message);
-    this.message = '';
-  }
-
   ngOnInit() {
-    this.connection = this.chatService.getMessages().subscribe(message => {
-      this.messages.push(message);
-    })
   }
-  
+
   ngOnDestroy() {
-    this.connection.unsubscribe();
+
   }
 }
+
+
+
+
+

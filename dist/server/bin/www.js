@@ -67,4 +67,4 @@ function onListening() {
         : 'port ' + addr.port;
     console.log('Listening on ' + bind);
 }
-//# sourceMappingURL=/Users/mustajab/Desktop/contextualcollaboration/angular2-express-starter/dist/server/bin/www.js.map
+//# sourceMappingURL=/Users/jilin/Programming/contextualcollabnodejs/dist/server/bin/www.js.map
