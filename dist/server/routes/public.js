@@ -8,4 +8,4 @@ publicRouter.get('/simple', (request, response) => {
         text: 'Hello Angular 2'
     });
 });
-//# sourceMappingURL=/Users/mustajab/Desktop/contextualcollaboration/angular2-express-starter/dist/server/routes/public.js.map
+//# sourceMappingURL=/Users/jilin/Programming/contextualcollabnodejs/dist/server/routes/public.js.map

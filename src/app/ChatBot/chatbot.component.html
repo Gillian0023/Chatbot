@@ -1,0 +1,37 @@
+<div style="margin:0 35%">
+    <section class="conv" ng-show="conversations.length && !createMode">
+        <div class="pad-bottom">Select or <a ng-click="createMode=true;query=null" href="">Create a Conversation</a></div>
+        <select class="select-wide" ng-model="selectedConv" ng-options="conv as (conv.title || conv.participantFirstNames) for conv in conversations" size="5"></select>
+    </section>
+    <section class="conv" ng-show="!!localUser && !conversations.length && !createMode">
+        <a ng-click="createMode=true;query=null" href="">Create a Conversation</a>
+    </section>
+
+    <section class="create" ng-show="createMode">
+        <div><input type="text" ng-model="query" ng-keyup="search(query, $event)" placeholder="Search for a user"/></div>
+        <div class="pad-bottom">
+            <select class="select-wide" multiple size="5">
+                <option ng-repeat="user in users" value="user" ng-click="selectUser(user)">{{user.displayName}}</option>
+            </select>
+        </div>
+        <div class="pad-bottom">
+            <select class="select-wide" multiple size="5">
+                <option ng-repeat="user in selectedUsers" value="user" ng-click="deselectUser(user)">{{user.displayName}}</option>
+            </select>
+        </div>
+        <div><input type="text" ng-show="selectedUsers.length>=2" class="pad-bottom" ng-model="title" placeholder="Enter title"/></div>
+        <button ng-click="createMode=false;selectedUsers=[]">Cancel</button>
+        <button ng-click="createConversation()" ng-disabled="!selectedUsers.length">Create</button>
+    </section>
+
+    <section class="send" ng-show="!!selectedConv && !createMode">
+        <div>Conversation: {{getConvName(selectedConv)}}</div>
+        <div class="send-container">
+            <input type="text" ng-model="message" placeholder="Enter message"/>
+            <button ng-click="send()" ng-disabled="!message">Send</button>
+            <input type="file" id="fileToUpload" multiple onchange="angular.element(this).scope().setFiles(this)" style="width:200px">
+        </div>
+        <div class="sending" ng-show="!!sending">me: {{sendingItem.text.content}}<span> sending...</span></div>
+        <div ng-repeat="item in items | limitTo:-10 | orderBy:'modificationTime':true" class="item" ng-class="{'sent-by-me': item.sentByMe}"><span class="light">{{item.modificationTime | date:'hh:mm a'}}:</span> {{item.sentByMe?'Me':item.creator.firstName}}: <span ng-class="{'italic':!!item.parent}" ng-bind-html="item.trustedText"></span></div>
+    </section>
+</div>

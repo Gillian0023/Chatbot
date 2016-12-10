@@ -15,4 +15,4 @@ feedRouter.delete('/:id', (request, response) => {
         id: request.params.id
     });
 });
-//# sourceMappingURL=/Users/mustajab/Desktop/contextualcollaboration/angular2-express-starter/dist/server/routes/feed.js.map
+//# sourceMappingURL=/Users/jilin/Programming/contextualcollabnodejs/dist/server/routes/feed.js.map

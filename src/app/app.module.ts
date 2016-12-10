@@ -7,13 +7,15 @@ import { StoreLogMonitorModule, useLogMonitor } from '@ngrx/store-log-monitor';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 
-import { MdIconModule, MdIconRegistry} from '@angular2-material/icon'; 
-import { MdInputModule } from '@angular2-material/input'; 
+import { MdIconModule, MdIconRegistry} from '@angular2-material/icon';
+import { MdInputModule } from '@angular2-material/input';
 import { MdButtonModule } from '@angular2-material/button';
-
-
+import { LoginModule } from './login/login.module';
+import { ChatbotModule } from './chatbot/chatbot.module'
 import { AppComponent } from './app.component';
+
 import { NewComponent } from './newcomponent/necomponent.component';
+
 
 import { routing } from './app.routing';
 import { feedReducer } from './store/feed/feed.reducer';
@@ -26,6 +28,7 @@ import { FeedEffects } from './store/feed/feed.effects';
     NewComponent
   ],
   imports: [
+      
     BrowserModule,
     routing,
     FormsModule,
@@ -44,12 +47,14 @@ import { FeedEffects } from './store/feed/feed.effects';
     MdIconModule.forRoot(),
     MdInputModule.forRoot(),
     MdButtonModule.forRoot(),
+    LoginModule, 
+    ChatbotModule
   ],
   providers: [
     MdIconRegistry,
   ],
   bootstrap: [
-    AppComponent
+    AppComponent,
   ]
 })
 export class AppModule { }

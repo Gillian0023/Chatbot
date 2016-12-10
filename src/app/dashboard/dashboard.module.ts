@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { DashboardComponent } from './dashboard.component';
 import { CommonModule } from '@angular/common';
-import { routing } from './dashboard.routing';
+import { DashboardRoutingModule } from './dashboard.routing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
@@ -9,7 +9,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    routing
+    DashboardRoutingModule
   ],
   declarations: [
     DashboardComponent

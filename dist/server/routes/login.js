@@ -44,4 +44,4 @@ loginRouter.post('/', function (request, response, next) {
         }
     });
 });
-//# sourceMappingURL=/Users/mustajab/Desktop/contextualcollaboration/angular2-express-starter/dist/server/routes/login.js.map
+//# sourceMappingURL=/Users/jilin/Programming/contextualcollabnodejs/dist/server/routes/login.js.map
