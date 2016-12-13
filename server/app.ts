@@ -3,15 +3,17 @@ import { json, urlencoded } from 'body-parser';
 import * as path from 'path';
 import * as cors from 'cors';
 import * as compression from 'compression';
+import * as moogoose from 'moogoose'
 
 // import { loginRouter } from './routes/login';
 // import { protectedRouter } from './routes/protected';
 // import { publicRouter } from './routes/public';
 // import { feedRouter } from './routes/feed';
 import { circuitRouter } from './routes/circuit';
+import {alarmRouter} from "./routes/alarm";
+
 
 const app: express.Application = express();
-
 
 app.disable('x-powered-by');
 
@@ -33,7 +35,7 @@ app.use(cors());
 // app.use('/api/public', publicRouter);
 // app.use('/api/feed', feedRouter);
   app.use('/api/circuit', circuitRouter);
-
+  app.use('/api/alarm', alarmRouter);
 if (app.get('env') === 'production') {
 
   // in production mode run application from dist folder
