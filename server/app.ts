@@ -3,7 +3,6 @@ import { json, urlencoded } from 'body-parser';
 import * as path from 'path';
 import * as cors from 'cors';
 import * as compression from 'compression';
-import * as moogoose from 'moogoose'
 
 // import { loginRouter } from './routes/login';
 // import { protectedRouter } from './routes/protected';
