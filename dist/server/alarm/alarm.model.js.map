@@ -1,1 +1,0 @@
-{"version":3,"file":"alarm.model.js","sourceRoot":"","sources":["../../../server/alarm/alarm.model.ts"],"names":[],"mappings":"AAAA,YAAY,CAAC;AAEb,2BAAyB,UAAU,CAAC,CAAA;AAGpC,IAAI,WAAW,GAAG,IAAI,mBAAQ,CAAC,MAAM,CACjC;IACI,EAAE,EACF,WAAW,EAAC,MAAM,EAAA;IAClB,QAAQ,EAEZ,AAFa;CAEZ,CACJ,CAAA;AACD;kBAAe,mBAAQ,CAAC,KAAK,CAAC,OAAO,EAAC,WAAW,CAAC,CAAC"}
