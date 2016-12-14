@@ -20,6 +20,8 @@
     OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
+
+
 /*jshint node:true */
 /*global require, Promise */
 
@@ -33,8 +35,8 @@ var config = {
 			"password" : "SBeXpHrejHRQK28u"			
 		},
 		{
-			"email"    : "moataz90@gmail.com",
-			"password" : "2CqpXe4z6Z9f9aJ7"			
+            "email"    : "jilin0023@gmail.com",
+            "password" : "gP3thMSxwQJ66YU2"	
 		}
 	],
     "domain"             : "circuitsandbox.net",
@@ -165,14 +167,13 @@ var Test = function () {
                     logger.info('[APP]: user logger on', result);
                     console.log('[APP]: user logger on', result);
                 });
-                /**** Added to get result */
             var user1Email = configPost.users[0].email;
             var user2Email = configPost.users[1].email;
 
             var client1 = self.getClient(user1Email);
             var client2 = self.getClient(user2Email);
 
-            /************** */
+            
                 resolve(
                     {   login: 'successful', 
                         user1Email: user1Email,
@@ -183,7 +184,13 @@ var Test = function () {
             })
             .catch(reject);
         });
-    };
+    }
+
+    /****
+     * There should be a logout function here
+     */
+
+    
 
 
      //*********************************************************************
@@ -202,7 +209,8 @@ var Test = function () {
             var client1 = self.getClient(user1Email);
             var client2 = self.getClient(user2Email);
 
-
+        console.log('Value of client1 is 3232:::');
+        console.log(client1);
 
         client1.getConversations({numberOfConversations: 20})
             .then(conversations => {
@@ -399,9 +407,9 @@ this.postTextMessageFromClient1 = function postTextMessageFromClient1(contentPos
             console.log('8989 value of contentPost is 8989');
             console.log(contentPost);  
 
-            client1.getConversations({numberOfConversations: 20})
+            client2.getConversations({numberOfConversations: 20})
             .then(conversations => {
-                return client1.addTextItem(conversations[1].topLevelItem.convId, contentPost)
+                return client2.addTextItem('2724264e-72d3-4864-bc10-9a4d87a1fe99'/*conversations[1].topLevelItem.convId*/, contentPost)
             }).then(res => {
                 resolve(res);
             })
@@ -521,6 +529,32 @@ this.postTextMessageFromClient1 = function postTextMessageFromClient1(contentPos
             return this.abc();
         
     }
+
+    /**********************************************************************
+     *  getDirectConversationWithUser
+     *  query String
+     *  User ID or email address
+     *  [createIfNotExists] Boolean optional
+     *  Create conversation with user if not already existing. Default is false.
+     **********************************************************************/
+    this.getDirectConvWithUserClient1 = function getDirectConvWithUserClient1(query, createIfNotExist) {
+
+        return new Promise(function (resolve, reject) {
+            var user1Email = config.users[0].email;
+            var user2Email = config.users[1].email;
+
+            var client1 = self.getClient(user1Email);
+            var client2 = self.getClient(user2Email);
+
+            client1.getDirectConversationWithUser(query, createIfNotExist)
+            .then(response => {
+                resolve(response);
+            })
+            .catch(reject);
+        });
+        
+    }
+
       //*********************************************************************
     //* getConversations
     //*********************************************************************

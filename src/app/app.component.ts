@@ -25,12 +25,7 @@ export class AppComponent  {
       .get('/api/circuit')
       .map((response: Response) => response.json())
       */
-        http
-      .get('http://localhost:4300/api/circuit/')
-      .toPromise()
-      .then(()=>setTimeout(() =>{}, 5000));
-
-
+       
       setInterval(function(){
          http
           .get('http://localhost:4300/api/circuit/hello')
