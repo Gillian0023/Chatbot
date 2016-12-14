@@ -2,11 +2,11 @@ import { RouterModule, Route } from '@angular/router';
 import { ModuleWithProviders } from '@angular/core';
 import { DashboardComponent } from './dashboard.component';
 
-const routes: Route[] = [
+const DashboardRoutes: Route[] = [
   {
-    path: '',
+    path: 'dashboard',
     component: DashboardComponent
-  }
+  },
 ];
 
-export const routing: ModuleWithProviders = RouterModule.forChild(routes);
+export const DashboardRoutingModule: ModuleWithProviders = RouterModule.forChild(DashboardRoutes);

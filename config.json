@@ -1,0 +1,15 @@
+{
+	"users" : [
+		{
+			"email"    : "jilin0023@gmail.com",
+			"password" : "gP3thMSxwQJ66YU2"
+		},
+		{
+			"email"    : "yve.renoir@ymail.com",
+			"password" : "VgHcCLdNq9EqGkJH"
+		}
+	],
+    "domain"             : "circuitsandbox.net",
+    "sdkLogLevel"        : "warn",
+    "filesPath"          : "./files/"
+}
