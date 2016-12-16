@@ -32,11 +32,11 @@ var config = {
 	"users" : [
 		{
 			"email"    : "mustajab90@gmail.com",
-			"password" : "SBeXpHrejHRQK28u"			
+			"password" : "Circuit1!"			
 		},
 		{
             "email"    : "jilin0023@gmail.com",
-            "password" : "gP3thMSxwQJ66YU2"	
+            "password" : "Circuit0!"	
 		}
 	],
     "domain"             : "circuitsandbox.net",
@@ -593,21 +593,7 @@ this.postTextMessageFromClient1 = function postTextMessageFromClient1(contentPos
 
 
             console.log('#3#7 get conversation items: ');
-            /**  client1.getConversationItems(conversations[1].topLevelItem.convId)
-            .then(items => {
-                console.log('#3#8 Conversation items are: ');
-                console.log(items);
-                console.log('#3#9 Length of Conversation items is: ');
-                console.log(items.length);
-                for (let i = 0; i < items.length; i++) {
-                    console.log(items[i].text.content);
-                    console.log(',');
-                    items[i].creatorId === client1.loggedOnUser.userId ? console.log('Me') : console.log('AlmoatazBellah Ibrahim');
-                    console.log(','); // var date = new Date(time);
-                    console.log(new Date(items[i].modificationTime));
-                }
-            })
-            .catch(console.error); **/
+            
             var content = {
                 subject: 'Message with attachment',
                 content: 'Hello to the world from me.',

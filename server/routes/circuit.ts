@@ -25,11 +25,11 @@ setInterval(function(){
                     
                     {
                         "email"    : "mustajab90@gmail.com",
-                        "password" : "SBeXpHrejHRQK28u"			
+                        "password" : "Circuit1!"			
                     },
                     {
                         "email"    : "jilin0023@gmail.com",
-                        "password" : "gP3thMSxwQJ66YU2"			
+                        "password" : "Circuit0!"			
                     },
                 ],
             "domain"             : "circuitsandbox.net",

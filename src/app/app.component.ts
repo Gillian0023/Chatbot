@@ -9,7 +9,7 @@ import 'rxjs/add/operator/map';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './alarm/alarm.component.html',
+  templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 
 })
