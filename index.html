@@ -2,7 +2,6 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Contextual Collaboration</title>
   <base href="/">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,20 +11,50 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
-  <app-root>
-    <div id="demo-content">
-        <div id="loader-wrapper" style="postion:relative;background:#009999; width: 100%; height: 100%; vertical-align:middle;">
-          <div style="margin-top:130px; color: white; text-align:center;font-family: cursive;"><h1>Contextual Collaboration</h1></div>
-          <div id="loader" style="position:absolute; top:60;"></div>
-        </div>
-    </div>
-  </app-root>
-
 
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular-sanitize.min.js"></script>
   <script src="https://circuitsandbox.net/circuit.js"></script>
 
-
+  <div id="demo-content">
+      <div id="loader-wrapper" style="postion:relative;background:#009999; width: 100%; height: 100%; vertical-align:middle;">
+          <div style="margin-top:130px; color: white; text-align:center;font-family: cursive;"><h1>Alarm Template Editor</h1></div>
+          <br><br>
+          <br><br>
+          <div>
+              <div class="alarm-input" style="margin: 20px 30%; width: 40%">
+                  Name: <input  [ngModel]='' style="width: 100%"/>
+              </div>
+              <div class="alarm-input" style="margin: 20px 30%; width: 40%">
+                  Experts:<input [ngModel]='' style="width: 100%"/>
+              </div>
+              <div style="margin: 20px 30%">Templates:</div>
+              <div class="alarm-template" style="margin: 20px 30%; width: 100%" ><md-icon >dashboard</md-icon>
+              <select style="width: 8%">
+              <option>Tank1</option>
+              <option>Tank2</option>
+              <option>Tank3<option>
+              </select>
+                  <select style="margin-left:5% ;width: 10%">
+                  <option>temperature</option>
+                      <option>pressure</option>
+                  </select>
+                  <select style="margin-left:5% ;width:8%">
+                      <option>too high</option>
+                      <option>a little high</option>
+                      <option>a little low</option>
+                      <option>too low</option>
+                  </select>
+                  <md-icon >alarm</md-icon>
+              </div>
+              <br><br>
+              <br><br>
+              <div style="margin: 20px 30%">
+                  <button  style="margin-left: 100px;margin-right: 100px" (click)="sendMessage()">send</button>
+                  <button  style="margin-left: 100px" (click)="cancel()" >cancel</button>
+              </div>
+          </div>
+      </div>
+  </div>
 </body>
 </html>
